@@ -29,3 +29,7 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j
+make install
+
+cp ../lib/libDBoW2.so /usr/local/lib
+cp ../Thirdparty/g2o/lib/libg2o.so /usr/local/lib
