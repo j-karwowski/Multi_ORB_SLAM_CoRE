@@ -44,7 +44,6 @@ if(NOT OpenCV_FOUND)
    endif()
 endif()
 
-set(EIGEN3_INCLUDE_DIR ${PROJECT_SOURCE_DIR}Thirdparty/eigen-3.2.10)
 find_package(Eigen3 3.1.0 REQUIRED NO_MODULE)
 find_package(Pangolin REQUIRED)
 
