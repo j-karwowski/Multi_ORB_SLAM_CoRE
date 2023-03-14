@@ -23,12 +23,6 @@ cd Vocabulary
 tar -xf ORBvoc.txt.tar.gz
 cd ..
 
-echo "download eigen"
-cd Thirdparty/
-wget https://gitlab.com/libeigen/eigen/-/archive/3.2.10/eigen-3.2.10.zip
-unzip eigen-3.2.10.zip
-cd ..
-
 echo "Configuring and building ORB_SLAM2 ..."
 
 mkdir build
