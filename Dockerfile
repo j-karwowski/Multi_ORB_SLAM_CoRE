@@ -79,3 +79,10 @@ RUN sh build.sh
 
 # Just for potentially mounting a volume (and run rosbag inside a container)
 RUN mkdir /dataset
+
+# https://catkin-tools.readthedocs.io/en/latest/installing.html
+RUN sh \
+    -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" \
+        > /etc/apt/sources.list.d/ros-latest.list'
+RUN wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+RUN apt-get update && apt-get install -y python3-catkin-tools
