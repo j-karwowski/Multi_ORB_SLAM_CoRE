@@ -56,18 +56,9 @@ RUN apt-get install -y \
     libavresample-dev
 RUN apt-get install -y libopencv-dev
 
-# Clone the repository
-RUN mkdir -p /ws/src && \
-    cd /ws/src && \
-    git clone https://github.com/j-karwowski/Multi_ORB_SLAM_CoRE.git -b core/devel Multi_ORB_SLAM
-WORKDIR /ws/src/Multi_ORB_SLAM
-# Build the Multi ORB-SLAM
-# RUN sh build.sh
-
-# Just for potentially mounting a volume (and run rosbag inside a container)
-RUN mkdir /dataset
-
 # Install comparible OpenCV version
+RUN mkdir -p /libraries/opencv
+WORKDIR /libraries/opencv
 RUN wget https://github.com/opencv/opencv/archive/refs/tags/3.4.16.zip && \
     unzip 3.4.16.zip
 RUN cd opencv-3.4.16 && \
@@ -76,3 +67,15 @@ RUN cd opencv-3.4.16 && \
     make -j2 && \
     make install && \
     cd ../../
+
+# Clone the ORB-SLAM2 repository
+WORKDIR /
+RUN mkdir -p /ws/src && \
+    cd /ws/src && \
+    git clone https://github.com/j-karwowski/Multi_ORB_SLAM_CoRE.git -b core/devel Multi_ORB_SLAM
+# Build the Multi ORB-SLAM
+WORKDIR /ws/src/Multi_ORB_SLAM
+RUN sh build.sh
+
+# Just for potentially mounting a volume (and run rosbag inside a container)
+RUN mkdir /dataset
