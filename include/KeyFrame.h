@@ -30,6 +30,7 @@
 #include "KeyFrameDatabase.h"
 
 #include <mutex>
+#include <unordered_map>
 
 
 namespace ORB_SLAM2
