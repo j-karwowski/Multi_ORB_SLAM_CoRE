@@ -1,8 +1,14 @@
-### Update
- - New testing Background : Ubuntu 22.04 + ROS Humble + OpenCV 4.5.4
+# Fork information
 
- - Matching ORB_SLAM2 ROS source code : https://github.com/EndlessLoops/ros2-ORB_SLAM2
+This fork aims to integrate the newest version of the ORB-SLAM2 (that also easily supports ROS2 integration) with the multiple camera support initially implemented in the [AlterPang/Multi_ORB_SLAM](https://github.com/AlterPang/Multi_ORB_SLAM).
 
+This is a WIP repository, extensive README TBD.
+
+## Previous work
+
+This fork is based on the [`EndlessLoops`'s fork](https://github.com/EndlessLoops/ORB_SLAM2/), which introduces support for the following setup: "Ubuntu 22.04 + ROS Humble + OpenCV 4.5.4" and provides relevant improvements in the [plain ORB-SLAM2 library](https://github.com/EndlessLoops/ros2-ORB_SLAM2).
+
+Nonetheless, `EndlessLoops`'s fork is based on the [`kyuhyong` fork](https://github.com/kyuhyong/ORB_SLAM2) in which numerous build setup improvements were made.
 
 # ORB-SLAM2
 **Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2))
